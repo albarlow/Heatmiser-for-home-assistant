@@ -166,6 +166,9 @@ class NeoStatEntity(CoordinatorEntity, ClimateEntity):
         """Return the additional state attributes."""
         attributes = {}
         attributes['low_battery'] = self.data.low_battery
+        attributes['hold_on'] = bool(self.data.hold_on)
+        attributes['hold_time'] = str(self.data.hold_time)[:-3]
+        attributes['hold_temp'] = self.data.hold_temp
         attributes['offline'] = self.data.offline
         attributes['standby'] = self.data.standby
         attributes['floor_temperature'] = self.data.current_floor_temperature
