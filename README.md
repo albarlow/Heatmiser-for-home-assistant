@@ -66,8 +66,8 @@ Install and configure SSH server from the "Add-on store". Once you have shell ru
 cd /config/
 mkdir custom_components
 cd /config/custom_components
-git clone https://github.com/MindrustUK/Heatmiser-for-home-assistant
-mv Heatmiser-for-home-assistant heatmiserneo
+git clone https://github.com/MindrustUK/Heatmiser-for-home-assistant /tmp/heatmiserneo
+mv /tmp/heatmiserneo/custom-components/heatmiserneo .
 ```
 
 For Windows 10 Manual installation:
@@ -79,17 +79,5 @@ Now create a subdirectory under custom_components called heatmiserneo.
 Download all the files from the Heatmiser-for-home-assistant Github repository.
 Copy and paste all thoese files into the new Home Assistant heatmiserneo sub-directory.
 ```
-Home Assistant Configuration:
 
-Add the following lines to configuration.yaml
-```
-climate:
-  - platform: heatmiserneo
-    host: <Insert IP Address / Hostname>
-    port: 4242
-logger:
-  default: warning
-  logs:
-    custom_components.heatmiserneo: warning
-```
-If debugging is required (submitting bug reports etc.) logger verbosity can be adjusted by setting the logs: entry to debug.
+Now follow instructions above.
